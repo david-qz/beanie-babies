@@ -16,6 +16,18 @@ export async function getBeanieBabies() {
     return response.data;
 }
 
+export async function searchBeanieBabies(query) {
+    const response = await client
+        .from(TABLE)
+        .select()
+        .textSearch('title', query, {
+            type: 'websearch',
+            config: 'english',
+        });
+
+    return response.data;
+}
+
 export async function getBeanieBaby(id) {
     const response = await client
         .from(TABLE)
