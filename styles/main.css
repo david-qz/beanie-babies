@@ -9,6 +9,10 @@ body {
     background-color: var(--background);
 }
 
+.hidden {
+    display: none;
+}
+
 .rainbow {
     background: repeating-linear-gradient(
         -45deg,

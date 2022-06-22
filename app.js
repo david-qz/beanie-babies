@@ -19,7 +19,12 @@ async function handlePageLoad() {
 const beanieBabyList = createBeanieBabyList(document.querySelector('#beanie-baby-list'));
 
 // Roll-up display function that renders (calls with state) each component
+let firstRender = true;
 function display() {
+    if (firstRender) {
+        document.querySelector('main').classList.remove('hidden');
+        firstRender = false;
+    }
     beanieBabyList({ beanieBabies });
 }
 
