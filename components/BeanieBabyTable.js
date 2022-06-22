@@ -1,10 +1,18 @@
+import { camelToTitleWithSpaces } from '/utils.js';
+
 export default function createBeanieBabyTable(root) {
     const tbody = root.querySelector('tbody');
 
     return ({ beanieBaby }) => {
         tbody.innerHTML = '';
 
-        for (const [k, v] of Object.entries(beanieBaby)) {
+        for (let [k, v] of Object.entries(beanieBaby)) {
+            if (k === 'id' || k === 'link' || k === 'image') {
+                continue;
+            }
+
+            k = camelToTitleWithSpaces(k);
+
             tbody.append(createTableRow(k, v));
         }
     };
