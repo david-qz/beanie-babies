@@ -3,6 +3,7 @@ import { getBeanieBaby } from '/services/beanie-babies-service.js';
 
 // import component creators
 import createBeanieBabyName from '/components/BeanieBabyName.js';
+import createBeanieBabyOverview from '/components/BeanieBabyOverview.js';
 import createBeanieBabyTable from '/components/BeanieBabyTable.js';
 
 // declare state variables
@@ -24,11 +25,13 @@ async function handlePageLoad() {
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
 const Name = createBeanieBabyName(document.querySelector('header h1'));
+const Overview = createBeanieBabyOverview(document.querySelector('#details-overview'));
 const Detail = createBeanieBabyTable(document.querySelector('#details-table'));
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
     Name({ name: beanieBaby.title });
+    Overview({ beanieBaby });
     Detail({ beanieBaby });
 }
 
