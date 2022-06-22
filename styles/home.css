@@ -1,1 +1,32 @@
 /* CSS for home page (index.html) */
+
+main {
+    padding: 15px;
+}
+
+#beanie-baby-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+li::marker {
+    content: '';
+}
+
+.beanie-baby-card {
+    width: 175px;
+    height: 175px;
+    border: 1px dashed black;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+.beanie-baby-card img {
+    height: 60%;
+    width: 100%;
+    object-fit: contain;
+}
