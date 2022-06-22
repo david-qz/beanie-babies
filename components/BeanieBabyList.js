@@ -13,6 +13,7 @@ export default function createBeanieBabyList(root) {
 export function BeanieBabyCard({ beanieBaby }) {
     const li = document.createElement('li');
     li.classList.add('beanie-baby-card');
+    li.classList.add('panel');
 
     const a = document.createElement('a');
     const params = new URLSearchParams();

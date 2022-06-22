@@ -26,6 +26,13 @@ body {
     );
 }
 
+.panel {
+    border: 1px dashed black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
 header {
     height: 80px;
     position: sticky;

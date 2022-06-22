@@ -18,11 +18,7 @@ li::marker {
 .beanie-baby-card {
     width: 175px;
     height: 175px;
-    border: 1px dashed black;
-    border-radius: 10px;
     padding: 5px;
-    text-align: center;
-    background-color: white;
 }
 
 .beanie-baby-card img {
