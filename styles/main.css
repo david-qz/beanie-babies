@@ -1,25 +1,44 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: white;
-    --footer-background: rgb(243, 242, 242);
+    --background: rgb(255, 255, 255);
+    --header-background: rgb(255, 255, 255);
+    --footer-background: rgb(255, 255, 255);
 }
 
 body {
-    height: 100%;
-    padding-bottom: 30px;
     font-family: 'Rubik', san-serif;
+    background-color: var(--background);
+}
+
+.rainbow {
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 0,   0,   0.3),
+        rgba(255, 154, 0,   0.3),
+        rgba(208, 222, 33,  0.3),
+        rgba(79,  220, 74,  0.3),
+        rgba(63,  218, 216, 0.3),
+        rgba(47,  201, 226, 0.3),
+        rgba(28,  127, 238, 0.3),
+        rgba(95,  21,  242, 0.3),
+        rgba(186, 12,  248, 0.3),
+        rgba(251, 7,   217, 0.3),
+        rgba(255, 0,   0,   0.3) 1000px
+    );
 }
 
 header {
+    height: 80px;
     position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     background-color: var(--header-background);
+    background-repeat: repeat;
 }
 
-main {
-    height: 100%;
+header img {
+    height: 80%;
+    margin: 0 20px;
 }
 
 footer {
