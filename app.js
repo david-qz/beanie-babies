@@ -16,7 +16,7 @@ async function handlePageLoad() {
 // Create each component:
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
-const beanieBabyList = createBeanieBabyList(document.querySelector('#beanie-baby-list'));
+const beanieBabyList = createBeanieBabyList(document.querySelector('#list'));
 
 // Roll-up display function that renders (calls with state) each component
 let firstRender = true;
