@@ -2,7 +2,7 @@
 import { getBeanieBabies } from './services/beanie-babies-service.js';
 
 // import component creators
-import createBeanieBabyList from './components/BeanieBabyList.js';
+import createList from './components/List.js';
 
 // declare state variables
 let beanieBabies = [];
@@ -16,7 +16,7 @@ async function handlePageLoad() {
 // Create each component:
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object
-const beanieBabyList = createBeanieBabyList(document.querySelector('#list'));
+const List = createList(document.querySelector('#list'));
 
 // Roll-up display function that renders (calls with state) each component
 let firstRender = true;
@@ -25,7 +25,7 @@ function display() {
         document.querySelector('main').classList.remove('hidden');
         firstRender = false;
     }
-    beanieBabyList({ beanieBabies });
+    List({ beanieBabies });
 }
 
 // Page load actions

@@ -1,6 +1,6 @@
 import { camelToTitleWithSpaces } from '/utils.js';
 
-export default function createBeanieBabyTable(root) {
+export default function createTable(root) {
     const tbody = root.querySelector('tbody');
 
     return ({ beanieBaby }) => {
