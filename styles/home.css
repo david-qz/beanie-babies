@@ -4,14 +4,6 @@ main {
     padding: 15px;
 }
 
-#search input {
-    display: block;
-    width: 250px;
-    height: 30px;
-    margin: 20px auto;
-    font-size: 1.2em;
-}
-
 #beanie-baby-list {
     display: flex;
     flex-flow: row wrap;
