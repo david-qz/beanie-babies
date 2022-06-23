@@ -12,25 +12,41 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="/styles/detail.css" />
+    <script src="https://kit.fontawesome.com/58276b05a8.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <title>Beanie Babies</title>
+    <title>Beanie Baby</title>
 </head>
 
 <body class="rainbow">
     <header>
+        <a href="/">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
         <img src="/assets/ty-logo.png">
-        <h1>Beanie Babies</h1>
+        <h1>Beanie Baby</h1>
     </header>
 
     <main class="hidden">
-        <section id="search">
-            <input placeholder="Search">
+        <section id="details-overview" class="panel">
+
         </section>
-        <ul id="beanie-baby-list"></ul>
+
+        <section id="details-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="detail.js"></script>
 </body>
 
 </html>
