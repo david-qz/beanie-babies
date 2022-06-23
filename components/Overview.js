@@ -1,4 +1,4 @@
-export default function createBeanieBabyOverview(root) {
+export default function createOverview(root) {
 
     return ({ beanieBaby }) => {
         root.innerHTML = '';

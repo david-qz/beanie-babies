@@ -1,16 +1,16 @@
-export default function createBeanieBabyList(root) {
+export default function createList(root) {
 
     return ({ beanieBabies }) => {
         root.innerHTML = '';
 
         for (const beanieBaby of beanieBabies) {
-            const element = BeanieBabyCard({ beanieBaby });
+            const element = createBeanieBabyCard({ beanieBaby });
             root.append(element);
         }
     };
 }
 
-export function BeanieBabyCard({ beanieBaby }) {
+function createBeanieBabyCard({ beanieBaby }) {
     const li = document.createElement('li');
     li.classList.add('beanie-baby-card');
     li.classList.add('panel');
