@@ -23,9 +23,9 @@ export default function createPaging(root, { handlePaging }) {
         handlePaging('last', pageSizeSelect.value);
     });
 
-    return ({ pageSize, pageNumber, totalPages }) => {
+    return ({ pageSize, pageNumber, totalPages, count }) => {
         pageSizeSelect.value = pageSize;
-        pageLocationSpan.textContent = `Page ${pageNumber + 1} of ${totalPages}`;
+        pageLocationSpan.textContent = `Page ${pageNumber + 1} of ${totalPages} (${count} items)`;
 
         firstButton.disabled = pageNumber <= 0;
         prevButton.disabled = pageNumber <= 0;
