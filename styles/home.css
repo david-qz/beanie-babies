@@ -12,15 +12,37 @@ main > * {
     margin: 15px 0;
 }
 
-#controls-container {
+/* #controls-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     gap: 15px;
+} */
+
+.flex-row-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    gap: 5px;
+}
+
+.flex-row-wrap span {
+    align-self: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-center {
+    justify-content: flex-start;
+}
+
+#controls-container {
+    row-gap: 25px;
 }
 
 .control {
-    height: 100%;
     padding: 5px 10px;
     margin: 0;
     background-color: white;

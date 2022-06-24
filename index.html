@@ -24,9 +24,9 @@
     </header>
 
     <main class="hidden">
-        <section id="controls-container">
+        <section id="controls-container" class="flex-row-wrap flex-between">
 
-            <form id="filter">
+            <form id="filter" class="flex-row-wrap flex-center">
                 <input name="name" placeholder="Name" class="control">
                 <select name="astroSign" class="control">
                     <option value="">Any Astrological Sign</option>
@@ -46,7 +46,7 @@
                 <button class="control">Submit</button>
             </form>
 
-            <section id="paging">
+            <section id="paging" class="flex-row-wrap flex-center">
                 <label>
                     Per Page:
                     <select class="control">
@@ -56,10 +56,12 @@
                     </select>
                 </label>
                 <span>Page 1 of X</span>
-                <button title="First Page" class="control"><<</button>
-                <button title="Previous Page" class="control"><</button>
-                <button title="Next Page" class="control">></button>
-                <button title="Last Page" class="control">>></button>
+                <div>
+                    <button title="First Page" class="control"><<</button>
+                    <button title="Previous Page" class="control"><</button>
+                    <button title="Next Page" class="control">></button>
+                    <button title="Last Page" class="control">>></button>
+                </div>
             </section>
 
         </section>
