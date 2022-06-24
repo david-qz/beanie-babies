@@ -36,10 +36,11 @@ main > * {
 }
 
 #list {
+    margin-top: 60px;
     display: flex;
     flex-flow: row wrap;
     gap: 15px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 li::marker {
