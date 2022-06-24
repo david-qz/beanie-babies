@@ -32,7 +32,13 @@ async function handlePageLoad() {
     state.beanieBabies = response.data;
     state.count = response.count;
 
-    state.totalPages = Math.ceil(state.count / state.pageSize);
+    state.totalPages = Math.max(1, Math.ceil(state.count / state.pageSize));
+
+    const { pageNumber, totalPages } = state;
+    if (pageNumber < 0 || pageNumber >= totalPages) {
+        searchParams.set('pageNumber', 0);
+        window.location.search = searchParams.toString();
+    }
 
     display();
 }
