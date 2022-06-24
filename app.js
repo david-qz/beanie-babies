@@ -12,7 +12,7 @@ const state = {
     nameQuery: '',
     astroSign: '',
     pageNumber: 0,
-    pageSize: 10,
+    pageSize: 25,
     totalPages: 0,
     count: 0,
 };
@@ -23,7 +23,7 @@ async function handlePageLoad() {
     state.nameQuery = searchParams.get('nameQuery') || '';
     state.astroSign = searchParams.get('astroSign') || '';
     state.pageNumber = parseInt(searchParams.get('pageNumber')) || 0;
-    state.pageSize = parseInt(searchParams.get('pageSize')) || 10;
+    state.pageSize = parseInt(searchParams.get('pageSize')) || 25;
 
     const start = state.pageNumber * state.pageSize;
     const end = start + state.pageSize;
