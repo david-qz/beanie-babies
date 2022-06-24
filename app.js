@@ -14,6 +14,7 @@ const state = {
     pageNumber: 0,
     pageSize: 10,
     totalPages: 0,
+    count: 0,
 };
 
 // write handler functions
@@ -27,10 +28,9 @@ async function handlePageLoad() {
     const start = state.pageNumber * state.pageSize;
     const end = start + state.pageSize;
 
-    let count;
-    [state.beanieBabies, count] = await getBeanieBabies(state.nameQuery, state.astroSign, { start, end });
+    [state.beanieBabies, state.count] = await getBeanieBabies(state.nameQuery, state.astroSign, { start, end });
 
-    state.totalPages = Math.ceil(count / state.pageSize);
+    state.totalPages = Math.ceil(state.count / state.pageSize);
 
     display();
 }
@@ -83,9 +83,19 @@ function display() {
         document.querySelector('main').classList.remove('hidden');
         firstRender = false;
     }
-    Filter({ nameQuery: state.nameQuery, astroSign: state.astroSign });
-    Paging({ pageSize: state.pageSize, pageNumber: state.pageNumber, totalPages: state.totalPages });
-    List({ beanieBabies: state.beanieBabies });
+    Filter({
+        nameQuery: state.nameQuery,
+        astroSign: state.astroSign
+    });
+    Paging({
+        pageSize: state.pageSize,
+        pageNumber: state.pageNumber,
+        totalPages: state.totalPages,
+        count: state.count
+    });
+    List({
+        beanieBabies: state.beanieBabies
+    });
 }
 
 // Page load actions
