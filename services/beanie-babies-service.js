@@ -19,7 +19,8 @@ export async function getBeanieBabies(nameQuery, astroSign, { start, end }) {
     query.range(start, end - 1);
 
     const response = await query;
-    return [response.data, response.count];
+
+    return unwrapResponse(response);
 }
 
 export async function getBeanieBaby(id) {
@@ -29,5 +30,15 @@ export async function getBeanieBaby(id) {
         .match({ id: id })
         .single();
 
-    return response.data;
+    return unwrapResponse(response);
+}
+
+function unwrapResponse(response) {
+    // eslint-disable-next-line no-console
+    if (response.error) console.log(response.error);
+    return response.error ? {
+        data: [],
+        error: response.error,
+        count: 0,
+    } : response;
 }
