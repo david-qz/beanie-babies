@@ -23,9 +23,15 @@ async function handlePageLoad() {
     state.astroSign = searchParams.get('astroSign') || '';
     state.pageNumber = parseInt(searchParams.get('pageNumber')) || 0;
     state.pageSize = parseInt(searchParams.get('pageSize')) || 10;
-    state.totalPages = parseInt(searchParams.get('totalPages')) || 0;
 
-    state.beanieBabies = await getBeanieBabies();
+    const start = state.pageNumber * state.pageSize;
+    const end = start + state.pageSize;
+
+    let count;
+    [state.beanieBabies, count] = await getBeanieBabies(state.nameQuery, state.astroSign, { start, end });
+
+    state.totalPages = Math.ceil(count / state.pageSize);
+
     display();
 }
 
