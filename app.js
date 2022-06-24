@@ -49,7 +49,7 @@ function handlePaging(pageChange, pageSize) {
     if (pageChange === 'first')      state.pageNumber = 0;
     else if (pageChange === 'prev')  state.pageNumber -= 1;
     else if (pageChange === 'next')  state.pageNumber += 1;
-    else if (pageChange === 'last')  state.pageNumber = state.totalPages;
+    else if (pageChange === 'last')  state.pageNumber = state.totalPages - 1;
     /* eslint-enable no-multi-spaces */
 
     // Make sure we haven't paged below 0
