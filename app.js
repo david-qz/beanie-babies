@@ -18,6 +18,13 @@ const state = {
 
 // write handler functions
 async function handlePageLoad() {
+    const searchParams = new URLSearchParams(window.location.search);
+    state.nameQuery = searchParams.get('nameQuery') || '';
+    state.astroSign = searchParams.get('astroSign') || '';
+    state.pageNumber = parseInt(searchParams.get('pageNumber')) || 0;
+    state.pageSize = parseInt(searchParams.get('pageSize')) || 10;
+    state.totalPages = parseInt(searchParams.get('totalPages')) || 0;
+
     state.beanieBabies = await getBeanieBabies();
     display();
 }
