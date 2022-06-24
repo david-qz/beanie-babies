@@ -28,7 +28,9 @@ async function handlePageLoad() {
     const start = state.pageNumber * state.pageSize;
     const end = start + state.pageSize;
 
-    [state.beanieBabies, state.count] = await getBeanieBabies(state.nameQuery, state.astroSign, { start, end });
+    const response = await getBeanieBabies(state.nameQuery, state.astroSign, { start, end });
+    state.beanieBabies = response.data;
+    state.count = response.count;
 
     state.totalPages = Math.ceil(state.count / state.pageSize);
 

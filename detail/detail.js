@@ -15,7 +15,8 @@ async function handlePageLoad() {
     const id = params.get('id');
     if (!id) window.location = '/';
 
-    beanieBaby = await getBeanieBaby(id);
+    const response = await getBeanieBaby(id);
+    beanieBaby = response.data;
     if (!beanieBaby) window.location = '/';
 
     display();
