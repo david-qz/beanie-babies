@@ -24,45 +24,49 @@
     </header>
 
     <main class="hidden">
-        <form id="filter">
-            <input name="name" placeholder="Name">
-            <select name="astroSign">
-                <option value="" disabled selected>Astrological Sign</option>
-                <option value="">Any</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option>
-            </select>
-            <button>Submit</button>
-        </form>
+        <section id="controls-container">
 
-        <section id="paging">
-            <label>
-                Per Page:
-                <select>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
+            <form id="filter">
+                <input name="name" placeholder="Name" class="control">
+                <select name="astroSign" class="control">
+                    <option value="">Any Astrological Sign</option>
+                    <option value="Aries">Aries</option>
+                    <option value="Taurus">Taurus</option>
+                    <option value="Gemini">Gemini</option>
+                    <option value="Cancer">Cancer</option>
+                    <option value="Leo">Leo</option>
+                    <option value="Virgo">Virgo</option>
+                    <option value="Libra">Libra</option>
+                    <option value="Scorpio">Scorpio</option>
+                    <option value="Sagittarius">Sagittarius</option>
+                    <option value="Capricorn">Capricorn</option>
+                    <option value="Aquarius">Aquarius</option>
+                    <option value="Pisces">Pisces</option>
                 </select>
-            </label>
-            <span>Page 1 of X</span>
-            <button title="First Page"><<</button>
-            <button title="Previous Page"><</button>
-            <button title="Next Page">></button>
-            <button title="Last Page">>></button>
+                <button class="control">Submit</button>
+            </form>
+
+            <section id="paging">
+                <label>
+                    Per Page:
+                    <select class="control">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+                <span>Page 1 of X</span>
+                <button title="First Page" class="control"><<</button>
+                <button title="Previous Page" class="control"><</button>
+                <button title="Next Page" class="control">></button>
+                <button title="Last Page" class="control">>></button>
+            </section>
+
         </section>
 
         <ul id="list">
         </ul>
+
     </main>
 
     <script type="module" src="app.js"></script>

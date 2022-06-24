@@ -1,16 +1,34 @@
 /* CSS for home page (index.html) */
 
+:root {
+    --blue: rgb(40, 40, 200);
+}
+
 main {
-    padding: 20px;
+    padding: 20px clamp(20px, 5vw, 75px);
 }
 
 main > * {
     margin: 15px 0;
 }
 
-#filter > * {
+#controls-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.control {
+    height: 100%;
+    padding: 5px 10px;
     margin: 0;
-    padding: 0;
+    background-color: white;
+    border: 1px solid darkgray;
+}
+
+.control:hover {
+    border: 1px solid var(--blue);
 }
 
 #paging span {
@@ -48,9 +66,9 @@ li::marker {
 }
 
 a {
-    color: rgb(40, 40, 200);
+    color: var(--blue);
 }
 
 a:visited {
-    color: rgb(40, 40, 200);
+    color: var(--blue);
 }
