@@ -1,14 +1,27 @@
 /* CSS for home page (index.html) */
 
 main {
-    padding: 15px;
+    padding: 20px;
+}
+
+main > * {
+    margin: 15px 0;
+}
+
+#filter > * {
+    margin: 0;
+    padding: 0;
+}
+
+#paging span {
+    margin: 0 10px;
 }
 
 #list {
     display: flex;
     flex-flow: row wrap;
     gap: 15px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 li::marker {
